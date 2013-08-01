@@ -5,11 +5,11 @@
  */
 // Plugin definition
 $plugin = array(
-  'title' => t('3-6-3 stacked'),
-  'category' => t('Bootstrap Three Columns'),
-  'icon' => 'bootstrap_threecol_3_6_3_stacked.png',
-  'theme' => 'bootstrap_threecol_3_6_3_stacked',
-  'admin css' => '../../bootstrap_panels_admin.css',
+  'title' => t('Three Columns Stacked'),
+  'category' => t('Bootstrap'),
+  'icon' => 'bootstrap_threecol_stacked.png',
+  'theme' => 'bootstrap_threecol_stacked',
+  'admin css' => '../panels-bootstrap-layouts-admin.css',
   'regions' => array(
     'top' => t('Top'),
     'left' => t('Left side'),

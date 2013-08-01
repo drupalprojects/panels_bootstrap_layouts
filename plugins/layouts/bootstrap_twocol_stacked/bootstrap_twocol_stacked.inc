@@ -5,11 +5,11 @@
  */
 // Plugin definition
 $plugin = array(
-  'title' => t('6-6 stacked'),
-  'category' => t('Bootstrap Two Columns'),
-  'icon' => 'bootstrap_twocol_6_6_stacked.png',
-  'theme' => 'bootstrap_twocol_6_6_stacked',
-  'admin css' => '../../bootstrap_panels_admin.css',
+  'title' => t('Two Columns Stacked'),
+  'category' => t('Bootstrap'),
+  'icon' => 'bootstrap_twocol_stacked.png',
+  'theme' => 'bootstrap_twocol_stacked',
+  'admin css' => '../panels-bootstrap-layouts-admin.css',
   'regions' => array(
     'top' => t('Top'),
     'left' => t('Left'),
