@@ -26,7 +26,6 @@ function theme_panels_bootstrap_layouts_style_region_render($vars) {
   $settings = $vars['settings'];
 
   $layouts = array(
-    'bootstrap_onecol',
     'bootstrap_twocol_stacked',
     'bootstrap_threecol_stacked',
   );
@@ -111,7 +110,7 @@ function panels_bootstrap_layouts_style_region_settings_form_validate($form, $se
 }
 
 function _panels_bootstrap_layouts_get_default_column_type($layout, $pid) {
-  if ($layout == 'bootstrap_onecol' || in_array($pid, array('top', 'bottom'))) {
+  if (in_array($pid, array('top', 'bottom'))) {
     return 12;
   }
 
