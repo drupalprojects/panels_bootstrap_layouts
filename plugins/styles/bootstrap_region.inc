@@ -71,7 +71,7 @@ function panels_bootstrap_layouts_style_region_settings_form($style_settings, $d
     '#options' => $options,
     '#default_value' => isset($style_settings['column_size'])
       ? $style_settings['column_size']
-      : _panels_bootstrap_layouts_get_default_column_type($display->layout, $pid),
+      : _panels_bootstrap_layouts_get_default_column_size($display->layout, $pid),
   );
 
   $form['offset_type'] = array(
@@ -136,7 +136,7 @@ function panels_bootstrap_layouts_style_region_settings_form_validate($form, $se
   }
 }
 
-function _panels_bootstrap_layouts_get_default_column_type($layout, $pid) {
+function _panels_bootstrap_layouts_get_default_column_size($layout, $pid) {
   if (in_array($pid, array('top', 'bottom'))) {
     return 12;
   }
