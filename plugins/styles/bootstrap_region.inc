@@ -33,7 +33,9 @@ function theme_panels_bootstrap_layouts_style_region_render($vars) {
   if (in_array($display->layout, $layouts) && $panes) {
     $class = array('panel-panel', $vars['region_id']);
 
-    $class[] = 'span' . $settings['column_size'];
+    if ($settings['column_size']) {
+      $class[] = 'span' . $settings['column_size'];
+    }
 
     if ($settings['offset_size']) {
       $class[] = 'offset' . $settings['offset_size'];
