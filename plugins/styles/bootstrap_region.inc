@@ -59,7 +59,9 @@ function panels_bootstrap_layouts_style_region_settings_form($style_settings, $d
     '#type' => 'select',
     '#title' => t('Column size'),
     '#options' => $options,
-    '#default_value' => isset($style_settings['column_size']) ? $style_settings['column_size'] : 0,
+    '#default_value' => isset($style_settings['column_size'])
+      ? $style_settings['column_size']
+      : _panels_bootstrap_layouts_get_default_column_size($display->layout, $pid),
   );
 
   $form['offset_size'] = array(
