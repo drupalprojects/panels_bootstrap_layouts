@@ -55,7 +55,7 @@ function theme_panels_bootstrap_layouts_style_region_render($vars) {
       $class[] = _panels_bootstrap_layouts_legacy_get_col_classes($settings);
     }
 
-    $class += array('panel-panel', $vars['region_id']);
+    $class = array_merge(array('panel-panel', $vars['region_id']), $class);
 
     $class = implode(' ', $class);
     $html = implode('', $panes);
