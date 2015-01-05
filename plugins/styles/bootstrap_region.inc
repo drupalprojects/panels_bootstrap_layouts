@@ -24,12 +24,7 @@ function theme_panels_bootstrap_layouts_style_region_render($vars) {
   $panes = $vars['panes'];
   $settings = $vars['settings'];
 
-  $layouts = array(
-    'bootstrap_twocol_stacked',
-    'bootstrap_threecol_stacked',
-  );
-
-  if (in_array($display->layout, $layouts) && $panes) {
+  if ($panes) {
     $class = array('panel-panel', $vars['region_id']);
 
     if ($settings['column_size']) {
@@ -61,7 +56,7 @@ function panels_bootstrap_layouts_style_region_settings_form($style_settings, $d
     '#options' => $options,
     '#default_value' => isset($style_settings['column_size'])
       ? $style_settings['column_size']
-      : _panels_bootstrap_layouts_get_default_column_size($display->layout, $pid),
+      : 1,
   );
 
   $form['offset_size'] = array(
@@ -74,18 +69,3 @@ function panels_bootstrap_layouts_style_region_settings_form($style_settings, $d
   return $form;
 }
 
-function _panels_bootstrap_layouts_get_default_column_size($layout, $pid) {
-  if (in_array($pid, array('top', 'bottom'))) {
-    return 12;
-  }
-
-  if ($layout == 'bootstrap_twocol_stacked') {
-    return 6;
-  }
-
-  if ($layout == 'bootstrap_threecol_stacked') {
-    return 4;
-  }
-
-  return 1;
-}
