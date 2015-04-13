@@ -1,4 +1,4 @@
-<div <?php if ($content->css_id) print "id='$content->css_id'" ?> class="panel <?php print implode(' ', array($classes, $content->css_class))?>">
+<div <?php if (isset($content->css_id)) print "id='$content->css_id'" ?> class="panel <?php print $classes;?>  <?php if(isset($content->css_class)) print $content->css_class;?>">
   <?php if ($content->title): ?>
     <div class="panel-heading">
       <h3 class="panel-title">
