@@ -32,8 +32,13 @@ function theme_panels_bootstrap_layouts_style_region_render($vars) {
     }
 
     foreach (array('xs', 'sm', 'md', 'lg') as $size) {
-      if (isset($settings['column'][$size]) && !empty($settings['column'][$size])) {
-        $class[] = 'col-' . $size . '-' . $settings['column'][$size];
+      if (isset($settings['column'][$size])) {
+        if ($settings['column'][$size] === 'hidden') {
+          $class[] = 'hidden-' . $size;
+        }
+        elseif (!empty($settings['column'][$size])) {
+          $class[] = 'col-' . $size . '-' . $settings['column'][$size];
+        }
       }
 
       if (isset($settings['offset'][$size]) && !empty($settings['offset'][$size])) {
@@ -90,6 +95,7 @@ function panels_bootstrap_layouts_style_region_settings_form($style_settings, $d
 
   $options = range(0, 12);
   $options[0] = t('-- None --');
+  $options['hidden'] = t('-- Hidden --');
 
   $column_sizes = array(
     'xs' => t('Extra small devices'),
