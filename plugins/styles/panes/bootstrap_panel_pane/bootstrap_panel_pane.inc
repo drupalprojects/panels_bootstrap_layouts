@@ -38,7 +38,7 @@ function panels_bootstrap_layouts_panel_style_pane_settings_form($style_settings
       'warning' => t('Warning'),
       'danger' => t('Danger'),
     ),
-    '#default_value' => $style_settings['style'] ?: 'default',
+    '#default_value' => isset($style_settings['style']) ? $style_settings['style'] : 'default',
   );
 
   $form['padding'] = array(
